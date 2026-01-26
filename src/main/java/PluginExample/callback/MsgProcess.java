@@ -13,8 +13,8 @@ import static PluginExample.PluginInternalApi.sendText;
  */
 public class MsgProcess {
     public static void onReceiveMsg(PluginMsgData.MsgData msg){
-        if (!msg.from.equals(getAccount())){
-            sendText(0, msg.from, "[at="+msg.sender+",text=]你好");
+        if (!msg.sender.equals(getAccount())){
+            sendText(0, msg.from, "你好");
         }
     }
 }
