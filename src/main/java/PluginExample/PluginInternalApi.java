@@ -119,42 +119,22 @@ public class PluginInternalApi {
 
 
     /***
-     * 发送一个文本消息
+     * 发送消息
      * @param type 消息类型,0为群消息,1为私聊消息
      * @param target 接收者账号,如果type为0,则为群号;如果type为1,则为账号
      *               当app为微信时,将不区分群号和好友,则type实际上不起作用
-     * @param content 消息内容
+     * @param content 消息内容,为可变参数,可以传入多个字符串
+     *                字符串开头标识消息类型,无开头则为文本消息
+     *                pic:: + 图片地址 标识图片消息
+     *                voice:: + 语音地址 标识语音消息
+     *                at:: + 账号 标识@某人消
+     *
+     *                在QQ和TIM上可以发送图文混合消息
+     *                在微信上发送图文混合会转换为多条消息发送
      */
-    public static void sendText(int type, String target, String content) {
+    public static void sendMsg(int type, String target, String... content) {
 
     }
-
-    /***
-     * 发送一个图片消息
-     * @param type 消息类型,0为群消息,1为私聊消息
-     * @param target 接收者账号,如果type为0,则为群号;如果type为1,则为账号
-     *               当app为微信时,将不区分群号和好友,则type实际上不起作用
-     * @param link 图片路径,为绝对路径或者url
-     */
-    public static void sendImage(int type, String target, String link) {
-
-    }
-
-    /***
-     * 发送一个混合消息
-     * @param type 消息类型,0为群消息,1为私聊消息
-     * @param target 接收者账号,如果type为0,则为群号;如果type为1,则为账号
-     *               当app为微信时,将不区分群号和好友,则type实际上不起作用
-     * @param mixed 消息内容,文本直接赋值即可,图片则需要加上 pic:: + 图片地址
-     */
-    public static void sendMix(int type, String target, String content, List<String> mixed) {
-
-    }
-
-    /***
-     * 获取当前运行的app类型
-     * @return 1为QQ, 2 为TIM, 3 为微信, 0 为未知
-     */
     public static int getAppType() {
         return 0;
     }
