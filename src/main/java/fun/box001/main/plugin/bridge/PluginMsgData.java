@@ -11,9 +11,13 @@ public class PluginMsgData {
         public static final int APP_WX = 3;
         public int fromApp;
 
-
+        //来源,群聊为群号,私聊为用户账号
         public String from;
+
+        //发送者
         public String sender;
+
+
         public List<MsgItem> items = new ArrayList<>();
     }
     public static class MsgItem {
