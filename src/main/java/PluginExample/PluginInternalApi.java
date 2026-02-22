@@ -1,16 +1,16 @@
 package PluginExample;
 
-import PluginExample.fake.Activity;
+import android.app.Activity;
 
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.List;
 
 /***
  * 这里是由模块内部直接使用的Api
  * 在脚本里是裸方法,直接 方法名(参数) 调用,前面无需加任何类名
  */
 public class PluginInternalApi {
+    private static final int PLUGIN_VER = 3;
     /***
      * 获取当前登录账号
      * @return 当前登录账号
@@ -25,7 +25,7 @@ public class PluginInternalApi {
      * @return 当前插件sdk版本
      */
     public static int getVer() {
-        return 2;
+        return PLUGIN_VER;
     }
 
     /***

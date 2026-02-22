@@ -1,10 +1,9 @@
 package PluginExample.callback;
 
-import fun.box001.main.plugin.bridge.PluginApi;
 import fun.box001.main.plugin.bridge.PluginMsgData;
 
 import static PluginExample.PluginInternalApi.getAccount;
-import static PluginExample.PluginInternalApi.sendText;
+import static PluginExample.PluginInternalApi.sendMsg;
 
 /***
  * 脚本消息回调
@@ -14,7 +13,7 @@ import static PluginExample.PluginInternalApi.sendText;
 public class MsgProcess {
     public static void onReceiveMsg(PluginMsgData.MsgData msg){
         if (!msg.sender.equals(getAccount())){
-            sendText(0, msg.from, "你好");
+            sendMsg(0, msg.from, "你好");
         }
     }
 }
