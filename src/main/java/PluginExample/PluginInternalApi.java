@@ -1,6 +1,7 @@
 package PluginExample;
 
 import android.app.Activity;
+import android.content.Context;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,7 +11,7 @@ import java.io.OutputStream;
  * 在脚本里是裸方法,直接 方法名(参数) 调用,前面无需加任何类名
  */
 public class PluginInternalApi {
-    private static final int PLUGIN_VER = 3;
+    private static final int PLUGIN_VER = 4;
     /***
      * 获取当前登录账号
      * @return 当前登录账号
@@ -35,6 +36,10 @@ public class PluginInternalApi {
      */
     public static Activity getActivity() {
         return new Activity();
+    }
+
+    public static Context getWrapContext() {
+        return null;
     }
 
     /***
