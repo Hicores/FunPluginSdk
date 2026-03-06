@@ -38,6 +38,11 @@ public class PluginInternalApi {
         return new Activity();
     }
 
+        /***
+        * 获取一个已注入默认AppCompat主题的Context实例
+        * 如果当前脚本运行于后台,或者被其他弹窗覆盖,此方法会返回null
+        * @return Context实例
+        */
     public static Context getWrapContext() {
         return null;
     }
